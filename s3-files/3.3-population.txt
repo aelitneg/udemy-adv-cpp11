@@ -1,0 +1,4 @@
+USA: 328200000
+Germany: 83020000
+Ireland: 4904000
+Scotland: 5454000
