@@ -21,6 +21,25 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build active file with Complex",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}/Complex/Complex.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
     ]
 }
