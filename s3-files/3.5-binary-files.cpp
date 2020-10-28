@@ -8,7 +8,8 @@ using namespace std;
 
 #pragma pack(push, 1)
 
-struct Session {
+struct Session
+{
     char name[64];
     int bpm;
     int bitDepth;
@@ -17,36 +18,43 @@ struct Session {
 
 #pragma pack(pop)
 
-int main() {
+int main()
+{
     string filename = "3.5-binary.bin";
 
-    // Write to binary file 
-    try {
+    // Write to binary file
+    try
+    {
         Session session = {"Everybody Wants to Rule the World", 112, 24, 44100};
 
         ofstream outFile;
         outFile.open(filename, ios::binary);
 
-        if (!outFile) {
+        if (!outFile)
+        {
             throw FileException("Unable to write to file: " + filename);
         }
 
         outFile.write(reinterpret_cast<char *>(&session), sizeof(Session));
 
         outFile.close();
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << e.what() << endl;
         return 1;
     }
 
     // Read from binary file
-    try {
+    try
+    {
         Session session = {};
 
         ifstream inFile;
         inFile.open(filename, ios::binary);
 
-        if (!inFile) {
+        if (!inFile)
+        {
             throw FileException("Unable to read from file: " + filename);
         }
 
@@ -58,7 +66,9 @@ int main() {
         cout << "BPM: " << session.bpm << endl;
         cout << "Bit Depth: " << session.bitDepth << endl;
         cout << "Sample Rate: " << session.sampleRate << endl;
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << e.what() << endl;
         return 1;
     }

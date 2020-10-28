@@ -1,9 +1,10 @@
-#include<iostream>
+#include <iostream>
 #include <map>
 
 using namespace std;
 
-int main() {
+int main()
+{
     map<string, int> ages;
 
     // Array Syntax
@@ -20,22 +21,24 @@ int main() {
     // Make Pair Helper Function
     ages.insert(make_pair("Dan", 37));
 
-    for (map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
+    for (map<string, int>::iterator it = ages.begin(); it != ages.end(); it++)
+    {
         cout << it->first << ": " << it->second << endl;
     }
 
-    for (map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
+    for (map<string, int>::iterator it = ages.begin(); it != ages.end(); it++)
+    {
         pair<string, int> age = *it;
-        cout<< age.first << ": " <<  age.second << endl;
+        cout << age.first << ": " << age.second << endl;
     }
 
-    if (ages.find("Vixky") != ages.end()) {
+    if (ages.find("Vixky") != ages.end())
+    {
         cout << "Ages contains 'Vicky'" << endl;
-    } else {
+    }
+    else
+    {
         cout << "Ages does not contain 'Vicky'" << endl;
     }
     return 0;
-
 }
-
-

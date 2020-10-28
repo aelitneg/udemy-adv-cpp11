@@ -3,32 +3,43 @@
 
 using namespace std;
 
-class AudioException: public exception {
+class AudioException : public exception
+{
 public:
-    virtual const char* what() const throw() {
+    virtual const char *what() const throw()
+    {
         return "AudioException";
     }
 };
 
-void play() {
+void play()
+{
     bool stdError = true;
     bool audioError = true;
 
-    if (audioError) {
+    if (audioError)
+    {
         throw AudioException();
     }
 
-    if (stdError) {
+    if (stdError)
+    {
         throw exception();
     }
 }
 
-int main() {
-    try {
+int main()
+{
+    try
+    {
         play();
-    } catch (AudioException &e) {
+    }
+    catch (AudioException &e)
+    {
         cout << "Cating AudioException: " << e.what() << endl;
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << "Catching exception: " << e.what() << endl;
     }
     return 0;

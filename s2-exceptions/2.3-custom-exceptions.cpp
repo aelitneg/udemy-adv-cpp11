@@ -3,26 +3,34 @@
 
 using namespace std;
 
-class CustomException: public exception {
-public: 
-    virtual const char* what() const throw() {
+class CustomException : public exception
+{
+public:
+    virtual const char *what() const throw()
+    {
         return "Something bad happened";
     }
 };
 
-class Test {
+class Test
+{
 public:
-    void badFunction() {
+    void badFunction()
+    {
         throw CustomException();
     }
 };
 
-int main() {
+int main()
+{
     Test test;
 
-    try {
+    try
+    {
         test.badFunction();
-    } catch (CustomException &e) {
+    }
+    catch (CustomException &e)
+    {
         cout << "Error: " << e.what() << endl;
     }
 

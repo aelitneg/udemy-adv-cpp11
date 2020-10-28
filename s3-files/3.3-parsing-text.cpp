@@ -6,18 +6,22 @@
 
 using namespace std;
 
-int main() {
-    try {
+int main()
+{
+    try
+    {
         ifstream inFile;
         string fileName = "3.3-population.txt";
 
         inFile.open(fileName);
 
-        if (!inFile.is_open()) {
+        if (!inFile.is_open())
+        {
             throw FileException("Unable to open file: " + fileName);
         }
 
-        while(inFile) {
+        while (inFile)
+        {
             string country;
             getline(inFile, country, ':');
 
@@ -26,7 +30,8 @@ int main() {
 
             inFile >> ws;
 
-            if(!inFile) {
+            if (!inFile)
+            {
                 break;
             }
 
@@ -34,7 +39,9 @@ int main() {
         }
 
         inFile.close();
-    } catch (exception &e) {
+    }
+    catch (exception &e)
+    {
         cout << e.what() << endl;
         return 1;
     }

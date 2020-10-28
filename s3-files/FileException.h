@@ -3,15 +3,19 @@
 
 using namespace std;
 
-class FileException: public exception {
-public: 
-    FileException(string errMsg) {
+class FileException : public exception
+{
+public:
+    FileException(string errMsg)
+    {
         this->errMsg.append(errMsg);
     }
 
-    virtual const char* what() const throw() {
+    virtual const char *what() const throw()
+    {
         return this->errMsg.c_str();
     }
-private: 
+
+private:
     string errMsg = "FileException: ";
 };
